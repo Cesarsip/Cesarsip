@@ -1,0 +1,4 @@
+# Archivos locales de desarrollo (no forman parte del perfil)
+preview.html
+__pycache__/
+*.pyc

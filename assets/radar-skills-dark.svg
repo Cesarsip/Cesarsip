@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="430" viewBox="0 0 480 430" font-family="-apple-system, 'Segoe UI', Roboto, Ubuntu, sans-serif">
+<rect width="480" height="430" rx="18" fill="#0d1626" stroke="#22314f" stroke-width="1.5"/>
+<text x="240" y="36" text-anchor="middle" font-size="15" font-weight="700" fill="#f1f5f9">Habilidades de Desarrollo</text>
+<polygon points="240.0,186.0 262.6,195.4 272.0,218.0 262.6,240.6 240.0,250.0 217.4,240.6 208.0,218.0 217.4,195.4" fill="none" stroke="#1c2a45" stroke-width="1"/>
+<polygon points="240.0,154.0 285.3,172.7 304.0,218.0 285.3,263.3 240.0,282.0 194.7,263.3 176.0,218.0 194.7,172.7" fill="none" stroke="#1c2a45" stroke-width="1"/>
+<polygon points="240.0,122.0 307.9,150.1 336.0,218.0 307.9,285.9 240.0,314.0 172.1,285.9 144.0,218.0 172.1,150.1" fill="none" stroke="#1c2a45" stroke-width="1"/>
+<polygon points="240.0,90.0 330.5,127.5 368.0,218.0 330.5,308.5 240.0,346.0 149.5,308.5 112.0,218.0 149.5,127.5" fill="none" stroke="#1c2a45" stroke-width="1"/>
+<line x1="240" y1="218" x2="240.0" y2="90.0" stroke="#1c2a45" stroke-width="1"/>
+<line x1="240" y1="218" x2="330.5" y2="127.5" stroke="#1c2a45" stroke-width="1"/>
+<line x1="240" y1="218" x2="368.0" y2="218.0" stroke="#1c2a45" stroke-width="1"/>
+<line x1="240" y1="218" x2="330.5" y2="308.5" stroke="#1c2a45" stroke-width="1"/>
+<line x1="240" y1="218" x2="240.0" y2="346.0" stroke="#1c2a45" stroke-width="1"/>
+<line x1="240" y1="218" x2="149.5" y2="308.5" stroke="#1c2a45" stroke-width="1"/>
+<line x1="240" y1="218" x2="112.0" y2="218.0" stroke="#1c2a45" stroke-width="1"/>
+<line x1="240" y1="218" x2="149.5" y2="127.5" stroke="#1c2a45" stroke-width="1"/>
+<polygon points="240.0,109.2 312.4,145.6 336.0,218.0 298.8,276.8 240.0,294.8 190.2,267.8 163.2,218.0 181.2,159.2" fill="#34d399" fill-opacity="0.16" stroke="#34d399" stroke-width="2.4" stroke-linejoin="round"/>
+<circle cx="240.0" cy="109.2" r="3.8" fill="#34d399"/>
+<circle cx="312.4" cy="145.6" r="3.8" fill="#34d399"/>
+<circle cx="336.0" cy="218.0" r="3.8" fill="#34d399"/>
+<circle cx="298.8" cy="276.8" r="3.8" fill="#34d399"/>
+<circle cx="240.0" cy="294.8" r="3.8" fill="#34d399"/>
+<circle cx="190.2" cy="267.8" r="3.8" fill="#34d399"/>
+<circle cx="163.2" cy="218.0" r="3.8" fill="#34d399"/>
+<circle cx="181.2" cy="159.2" r="3.8" fill="#34d399"/>
+<text x="240.0" y="62.0" text-anchor="middle" font-size="12" font-weight="600" fill="#f1f5f9">Python</text>
+<text x="240.0" y="97.2" text-anchor="middle" font-size="11" font-weight="700" fill="#34d399">85</text>
+<text x="346.1" y="105.9" text-anchor="start" font-size="12" font-weight="600" fill="#f1f5f9">Backend</text>
+<text x="323.7" y="138.3" text-anchor="start" font-size="11" font-weight="700" fill="#34d399">80</text>
+<text x="390.0" y="223.0" text-anchor="start" font-size="12" font-weight="600" fill="#f1f5f9">Bases de Datos</text>
+<text x="352.0" y="222.0" text-anchor="start" font-size="11" font-weight="700" fill="#34d399">75</text>
+<text x="346.1" y="338.1" text-anchor="start" font-size="12" font-weight="600" fill="#f1f5f9">Frontend</text>
+<text x="310.1" y="292.1" text-anchor="start" font-size="11" font-weight="700" fill="#34d399">65</text>
+<text x="240.0" y="382.0" text-anchor="middle" font-size="12" font-weight="600" fill="#f1f5f9">Linux</text>
+<text x="240.0" y="314.8" text-anchor="middle" font-size="11" font-weight="700" fill="#34d399">60</text>
+<text x="133.9" y="338.1" text-anchor="end" font-size="12" font-weight="600" fill="#f1f5f9">Redes</text>
+<text x="178.9" y="283.1" text-anchor="end" font-size="11" font-weight="700" fill="#34d399">55</text>
+<text x="90.0" y="223.0" text-anchor="end" font-size="12" font-weight="600" fill="#f1f5f9">Seguridad</text>
+<text x="147.2" y="222.0" text-anchor="end" font-size="11" font-weight="700" fill="#34d399">60</text>
+<text x="133.9" y="105.9" text-anchor="end" font-size="12" font-weight="600" fill="#f1f5f9">Cloud / AWS</text>
+<text x="169.9" y="151.9" text-anchor="end" font-size="11" font-weight="700" fill="#34d399">65</text>
+</svg>
