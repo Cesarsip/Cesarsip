@@ -23,10 +23,11 @@
 
 ---
 
-## Hola, soy César 👋
+## Hola, soy Cesarsi 👋
 
-Desarrollador backend en formación, construyendo APIs y aplicaciones web con **Python y Django**.
+Estudiante de programación — construyendo APIs y aplicaciones web con **Python y Django**.
 
+- 🎓 **Formación:** Analista en Programación (en curso) — próximamente **Ingeniería en Ciberseguridad**
 - 💻 **Stack actual:** Python, Django/DRF, PostgreSQL, HTML, CSS, JavaScript
 - 🔐 **Enfoque:** APIs REST con JWT, programación segura y procesos transaccionales
 - ☁️ **Despliegue:** AWS EC2 · Nginx · Gunicorn · SSL con Let's Encrypt

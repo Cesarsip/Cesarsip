@@ -154,8 +154,8 @@ def obtener_datos():
 # GENERADORES DE SVG
 # ---------------------------------------------------------------
 def banner_svg(t):
-    """Banner con ventana de terminal: identidad + stack en JSON."""
-    W, H = 1180, 310
+    """Banner estilo terminal "perfil.sh --live": paneles VISUAL.MAP (radar animado) y SYSTEM.INFO."""
+    W, H = 1180, 470
     p = []
     p.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{FONT}">')
     p.append('<defs>')
@@ -163,53 +163,86 @@ def banner_svg(t):
     p.append(f'<radialGradient id="glow" cx="0.12" cy="0.1" r="0.7"><stop offset="0" stop-color="{t["accent"]}" stop-opacity="0.13"/><stop offset="1" stop-color="#000000" stop-opacity="0"/></radialGradient>')
     p.append(f'<pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M44 0H0V44" fill="none" stroke="{t["grid"]}" stroke-width="1" opacity="0.35"/></pattern>')
     p.append('</defs>')
-    p.append(f'<rect width="{W}" height="{H}" rx="0" fill="url(#bg)"/>')
+    p.append(f'<rect width="{W}" height="{H}" fill="url(#bg)"/>')
     p.append(f'<rect width="{W}" height="{H}" fill="url(#grid)"/>')
     p.append(f'<rect width="{W}" height="{H}" fill="url(#glow)"/>')
 
     # Ventana principal
-    p.append(f'<rect x="30" y="26" width="1120" height="258" rx="16" fill="{t["panel"]}" stroke="{t["border"]}" stroke-width="1.5"/>')
-    # Barra de título de la ventana
+    p.append(f'<rect x="30" y="24" width="1120" height="422" rx="16" fill="{t["panel"]}" stroke="{t["border"]}" stroke-width="1.5"/>')
     p.append(f'<line x1="30" y1="64" x2="1150" y2="64" stroke="{t["border"]}" stroke-width="1"/>')
-    p.append(f'<circle cx="58" cy="45" r="6" fill="#ef4444"/><circle cx="80" cy="45" r="6" fill="#f59e0b"/><circle cx="102" cy="45" r="6" fill="#22c55e"/>')
-    p.append(f'<text x="590" y="50" text-anchor="middle" font-family="{MONO}" font-size="12" fill="{t["muted"]}">cesar@github: ~/perfil — en vivo</text>')
+    p.append(f'<circle cx="56" cy="44" r="6" fill="#ef4444"/><circle cx="78" cy="44" r="6" fill="#f59e0b"/><circle cx="100" cy="44" r="6" fill="#22c55e"/>')
+    p.append(f'<text x="590" y="49" text-anchor="middle" font-family="{MONO}" font-size="12.5" fill="{t["muted"]}">perfil.sh --live</text>')
 
-    # Lado izquierdo: identidad
-    p.append(f'<text x="72" y="112" font-family="{MONO}" font-size="16" fill="{t["accent"]}">$ whoami</text>')
-    p.append(f'<text x="70" y="158" font-size="42" font-weight="800" fill="{t["text"]}" letter-spacing="-1">César Aedo</text>')
-    p.append(f'<text x="72" y="188" font-size="16.5" fill="{t["muted"]}">@Cesarsip · <tspan fill="{t["accent2"]}" font-weight="600">desarrollo backend</tspan></text>')
+    # ---------- Panel izquierdo: VISUAL.MAP ----------
+    p.append(f'<rect x="48" y="78" width="474" height="312" rx="12" fill="{t["mini"]}" stroke="{t["border"]}" stroke-width="1"/>')
+    p.append(f'<text x="66" y="113" font-family="{MONO}" font-size="13.5" font-weight="700" fill="{t["accent"]}">VISUAL.MAP</text>')
+    p.append(f'<rect x="424" y="96" width="82" height="20" rx="10" fill="none" stroke="{t["border"]}" stroke-width="1" stroke-dasharray="2 3"/>')
+    p.append(f'<text x="465" y="110" text-anchor="middle" font-family="{MONO}" font-size="9.5" letter-spacing="1" fill="{t["muted"]}">ANIMATED</text>')
+    # Esquinas decorativas
+    p.append(f'<path d="M58 100 V88 H70" fill="none" stroke="{t["accent2"]}" stroke-width="2" opacity="0.85"/>')
+    p.append(f'<path d="M512 368 V380 H500" fill="none" stroke="{t["accent2"]}" stroke-width="2" opacity="0.85"/>')
 
-    # Chips del stack
-    chips = ["Python", "Django", "PostgreSQL", "AWS"]
-    x = 72
-    for c in chips:
-        w = 22 + len(c) * 8.2
-        p.append(f'<rect x="{x:.0f}" y="208" width="{w:.0f}" height="28" rx="14" fill="{t["accent"]}" fill-opacity="0.10" stroke="{t["accent"]}" stroke-width="1"/>')
-        p.append(f'<text x="{x + w / 2:.0f}" y="227" text-anchor="middle" font-size="13" font-weight="600" fill="{t["accent"]}">{esc(c)}</text>')
-        x += w + 10
+    # Radar (decorativo, con barrido giratorio)
+    cx, cy, R = 285, 244, 100
+    for nivel in (0.25, 0.5, 0.75, 1.0):
+        p.append(f'<circle cx="{cx}" cy="{cy}" r="{R * nivel:.1f}" fill="none" stroke="{t["accent"]}" stroke-opacity="0.30" stroke-width="1"/>')
+    p.append(f'<line x1="{cx - R}" y1="{cy}" x2="{cx + R}" y2="{cy}" stroke="{t["accent"]}" stroke-opacity="0.16" stroke-width="1"/>')
+    p.append(f'<line x1="{cx}" y1="{cy - R}" x2="{cx}" y2="{cy + R}" stroke="{t["accent"]}" stroke-opacity="0.16" stroke-width="1"/>')
+    d = R * 0.7071
+    p.append(f'<line x1="{cx - d:.1f}" y1="{cy - d:.1f}" x2="{cx + d:.1f}" y2="{cy + d:.1f}" stroke="{t["accent"]}" stroke-opacity="0.16" stroke-width="1"/>')
+    p.append(f'<line x1="{cx - d:.1f}" y1="{cy + d:.1f}" x2="{cx + d:.1f}" y2="{cy - d:.1f}" stroke="{t["accent"]}" stroke-opacity="0.16" stroke-width="1"/>')
+    for ang in range(0, 360, 45):
+        a = math.radians(ang)
+        x1 = cx + 106 * math.cos(a)
+        y1 = cy + 106 * math.sin(a)
+        x2 = cx + 114 * math.cos(a)
+        y2 = cy + 114 * math.sin(a)
+        p.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{t["accent"]}" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>')
+    tx = cx + R * math.cos(math.radians(-14))
+    ty = cy + R * math.sin(math.radians(-14))
+    p.append('<g>')
+    p.append(f'<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 {cx} {cy}" to="360 {cx} {cy}" dur="9s" repeatCount="indefinite"/>')
+    p.append(f'<line x1="{cx}" y1="{cy}" x2="{cx + R}" y2="{cy}" stroke="{t["accent"]}" stroke-width="2" stroke-opacity="0.75"/>')
+    p.append(f'<line x1="{cx}" y1="{cy}" x2="{tx:.1f}" y2="{ty:.1f}" stroke="{t["accent"]}" stroke-width="1.4" stroke-opacity="0.30"/>')
+    p.append(f'<circle cx="{cx + R}" cy="{cy}" r="3.5" fill="{t["accent"]}"/>')
+    p.append('</g>')
+    p.append(f'<circle cx="{cx}" cy="{cy}" r="15" fill="none" stroke="{t["accent"]}" stroke-opacity="0.35" stroke-width="1.2"/>')
+    p.append(f'<circle cx="{cx}" cy="{cy}" r="8" fill="{t["accent"]}"/>')
 
-    p.append(f'<text x="72" y="266" font-family="{MONO}" font-size="12" fill="{t["muted"]}">github.com/Cesarsip</text>')
+    # ---------- Panel derecho: SYSTEM.INFO ----------
+    p.append(f'<rect x="542" y="78" width="590" height="312" rx="12" fill="{t["mini"]}" stroke="{t["border"]}" stroke-width="1"/>')
+    p.append(f'<text x="560" y="113" font-family="{MONO}" font-size="13.5" font-weight="700" fill="{t["accent"]}">SYSTEM.INFO</text>')
+    p.append(f'<circle cx="999" cy="107" r="4.5" fill="{t["accent"]}"><animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite"/></circle>')
+    p.append(f'<text x="1114" y="112" text-anchor="end" font-family="{MONO}" font-size="11.5" fill="{t["accent"]}">LIVE · @CESARSIP</text>')
 
-    # Lado derecho: mini panel JSON
-    p.append(f'<rect x="726" y="84" width="396" height="176" rx="12" fill="{t["mini"]}" stroke="{t["border"]}" stroke-width="1"/>')
-    p.append(f'<text x="746" y="108" font-family="{MONO}" font-size="12" fill="{t["muted"]}">stack.json</text>')
-    p.append(f'<line x1="726" y1="120" x2="1122" y2="120" stroke="{t["border"]}" stroke-width="1"/>')
-    lineas = [
-        ('{', None, None),
-        ('  "rol": ', '"Desarrollador Backend",', t),
-        ('  "foco": ', '["Django", "DRF"],', t),
-        ('  "db": ', '"PostgreSQL",', t),
-        ('  "cloud": ', '"AWS EC2 + Nginx",', t),
-        ('  "pagos": ', '"Webpay Plus"', t),
-        ('}', None, None),
+    filas = [
+        ("Subject", "Cesarsi"),
+        ("Estudios", "Analista en Programación (en curso)"),
+        ("Meta", "Ingeniería en Ciberseguridad"),
+        ("Focus", "APIs REST · JWT · Webpay"),
+        ("Core.Lang", "Python · JavaScript"),
+        ("Backend", "Django · Django REST"),
+        ("Frontend", "HTML · CSS"),
+        ("Database", "PostgreSQL"),
+        ("Cloud", "AWS EC2 · Nginx"),
+        ("Grid.GitHub", "Cesarsip"),
     ]
-    y = 143
-    for clave, valor, _ in lineas:
-        if valor is None:
-            p.append(f'<text x="746" y="{y}" font-family="{MONO}" font-size="13" fill="{t["muted"]}">{esc(clave)}</text>')
-        else:
-            p.append(f'<text x="746" y="{y}" font-family="{MONO}" font-size="13" fill="{t["accent2"]}">{esc(clave)}<tspan fill="{t["str"]}">{esc(valor)}</tspan></text>')
-        y += 17.5
+    CW = 7.4  # ancho aproximado de un carácter monoespaciado a 13px
+    y = 148
+    for etiqueta, valor in filas:
+        x1l = 560 + len(etiqueta) * CW + 12
+        x2l = 1114 - len(valor) * CW - 12
+        if x2l > x1l:
+            p.append(f'<line x1="{x1l:.0f}" y1="{y - 4}" x2="{x2l:.0f}" y2="{y - 4}" stroke="{t["border"]}" stroke-width="1.2" stroke-dasharray="1.5 4.5" stroke-linecap="round"/>')
+        p.append(f'<text x="560" y="{y}" font-family="{MONO}" font-size="13" fill="{t["muted"]}">{esc(etiqueta)}</text>')
+        p.append(f'<text x="1114" y="{y}" text-anchor="end" font-family="{MONO}" font-size="13" fill="{t["text"]}">{esc(valor)}</text>')
+        y += 24.5
+
+    # ---------- Pie de ventana ----------
+    p.append(f'<line x1="48" y1="404" x2="1132" y2="404" stroke="{t["border"]}" stroke-width="1"/>')
+    p.append(f'<circle cx="58" cy="424" r="4.5" fill="{t["accent"]}"/>')
+    p.append(f'<text x="72" y="428.5" font-family="{MONO}" font-size="11.5" fill="{t["accent"]}">ALL SYSTEMS NOMINAL</text>')
+    p.append(f'<text x="1132" y="428.5" text-anchor="end" font-family="{MONO}" font-size="11.5" fill="{t["muted"]}">APRENDER CONSTRUYENDO</text>')
 
     p.append('</svg>')
     return "\n".join(p)

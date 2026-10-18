@@ -5,13 +5,13 @@
 <line x1="40" y1="72" x2="600" y2="72" stroke="#d8e2ee" stroke-width="1"/>
 <text x="40" y="136" font-size="34" font-weight="800" fill="#0f172a">6</text>
 <text x="40" y="160" font-size="13" fill="#64748b">Total stars</text>
-<text x="240" y="136" font-size="34" font-weight="800" fill="#0f172a">6</text>
+<text x="240" y="136" font-size="34" font-weight="800" fill="#0f172a">7</text>
 <text x="240" y="160" font-size="13" fill="#64748b">Public repos</text>
 <text x="440" y="136" font-size="34" font-weight="800" fill="#0f172a">3</text>
 <text x="440" y="160" font-size="13" fill="#64748b">Followers</text>
-<text x="40" y="236" font-size="34" font-weight="800" fill="#0f172a">39</text>
+<text x="40" y="236" font-size="34" font-weight="800" fill="#0f172a">41</text>
 <text x="40" y="260" font-size="13" fill="#64748b">Contributions (1y)</text>
-<text x="240" y="236" font-size="34" font-weight="800" fill="#0f172a">0</text>
+<text x="240" y="236" font-size="34" font-weight="800" fill="#0f172a">1</text>
 <text x="240" y="260" font-size="13" fill="#64748b">Current streak</text>
 <text x="440" y="236" font-size="34" font-weight="800" fill="#0f172a">3</text>
 <text x="440" y="260" font-size="13" fill="#64748b">Longest streak</text>
