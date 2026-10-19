@@ -27,7 +27,7 @@
 
 **[Eva2ProgramacionBackEnd](https://github.com/Cesarsip/Eva2ProgramacionBackEnd)** — plataforma de matrículas con carro persistente, bloqueo transaccional (`select_for_update`), autenticación JWT y pago con **Webpay Plus**.
 
-### 📊 Estadísticas de GitHub
+### 📊 GitHub en números
 
 <div align="center">
 
