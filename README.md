@@ -31,11 +31,7 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=Cesarsip&show_icons=true&include_all_commits=true&hide_border=true&theme=github_dark&rank_icon=github&locale=es" />
-    <img width="48%" src="https://github-readme-stats.vercel.app/api?username=Cesarsip&show_icons=true&include_all_commits=true&hide_border=true&theme=default&rank_icon=github&locale=es" alt="Estadísticas de GitHub de Cesarsi" />
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=Cesarsip&layout=compact&langs_count=6&hide_border=true&theme=github_dark&locale=es" />
-    <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Cesarsip&layout=compact&langs_count=6&hide_border=true&theme=default&locale=es" alt="Lenguajes más usados" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Cesarsip&theme=github_dark" />
+    <img width="70%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Cesarsip&theme=github" alt="Resumen de GitHub de Cesarsi" />
   </picture>
 </p>
